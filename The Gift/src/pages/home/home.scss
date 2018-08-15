@@ -1,3 +1,44 @@
+$fa-font-path: "../assets/fonts" !default; 
+@import "font-awesome"; 
+i[class^="fa-"], ion-icon[class^="fa-"] {    
+    font-family: "FontAwesome" !important;
+ }
+ 
 page-home {
+    
+    .message_row {
+    background-color: #fff;
+    }
+    .message {
+    padding: 10px! important;
+    transition: all 250ms ease-in-out !important;
+    border-radius: 10px !important;
+    margin-bottom: 4px !important;
+    }
+    .my_message {
+    background: #f00 !important;
+    color: #000 !important;
+    text-align: right;    
+    float: right;
+    }
+    .other_message {
+    background: #dad5d5 !important;
+    color: #000 !important;
+    text-align: left;
+    }
+    .time {
+    color: #afafaf;
+    float: right;
+    font-size: small;
+    }
+    .my_message_flex{
+        justify-content: flex-end;
+    }
+    .teste {
+        height: 50px;
+    }
+    
+    .chat_input{
 
-}
+    }
+    }

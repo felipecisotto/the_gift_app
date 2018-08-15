@@ -1,17 +1,33 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title style="text-align:center">
+      Chat App
+    </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-grid>
+    <ion-row *ngFor="let message of chats" [ngClass]="{'my_message_flex': message.from === nickname}">
+      <ion-col col-9 class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+        <span>{{ message.text }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-row class="message_row">
+        <ion-col col-9>
+          <ion-item no-lines>
+            <ion-input type="text" placeholder="Enter Message" [(ngModel)]="chat_input" class="chat_input"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button clear color="primary" required (click)="send(chat_input)">
+            <ion-icon class="fa-paper-plane button"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+
+  </ion-footer>
