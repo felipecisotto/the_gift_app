@@ -7,38 +7,55 @@ i[class^="fa-"], ion-icon[class^="fa-"] {
 page-home {
     
     .message_row {
-    background-color: #fff;
+        background-color: #fff;
     }
     .message {
-    padding: 10px! important;
-    transition: all 250ms ease-in-out !important;
-    border-radius: 10px !important;
-    margin-bottom: 4px !important;
+        padding: 12px! important;
+        transition: all 250ms ease-in-out !important;
+        border-radius: 10px !important;
+        margin-bottom: 4px !important;
     }
     .my_message {
-    background: #f00 !important;
-    color: #000 !important;
-    text-align: right;    
-    float: right;
+        background: #f00 !important;
+        color: #000 !important;
+        text-align: right;    
+        float: right;
     }
     .other_message {
-    background: #dad5d5 !important;
-    color: #000 !important;
-    text-align: left;
+        background: #dad5d5 !important;
+        color: #000 !important;
+        text-align: left;
     }
     .time {
-    color: #afafaf;
-    float: right;
-    font-size: small;
+        color: #afafaf;
+        float: right;
+        font-size: small;
     }
     .my_message_flex{
         justify-content: flex-end;
     }
-    .teste {
-        height: 50px;
+    .footer{
+        height: 3.5em;
+        bottom:60px!important;
     }
-    
+    .ion-rodape{
+        padding: 0px!important;
+        min-height: 3.5em;
+    }
+    .item-ios {
+        padding-left: 9px;
+    }
     .chat_input{
-
+        border-radius: 10px;
+        border: 1px solid #333;
+        padding: 4px;
     }
+    .chat_button{
+        float: right;
+        bottom: 49px;
+        right: 1.09em;
     }
+    .text-input-ios{
+        margin: 11px 8px 11px 11px;
+    }
+}
