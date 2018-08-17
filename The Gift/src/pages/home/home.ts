@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Observable } from 'rxjs/Observable';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Content } from 'ionic-angular';
 import { ChatProvider } from './../../providers/chat/chat';
 
 
@@ -9,11 +8,13 @@ import { ChatProvider } from './../../providers/chat/chat';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  messages = [];
-  nickname = "Me";
-  chats = [];
-  context = {};
-  chat_input;
+  @ViewChild(Content) contentArea: Content;
+  private messages = [];
+  private nickname = "Me";
+  private chats = [];
+  private context = {};
+  private chat_input;
+  private mutationObserver: MutationObserver;
 
   constructor(public navCtrl: NavController, private chatProvider: ChatProvider) {
     this.talk(null)
@@ -21,29 +22,29 @@ export class HomePage {
 
   send(msg) {
     if (msg != null) {
-      var message = { text: msg, from: "Me", created: new Date(),hasImage:false };
+      var message = { text: msg, from: "Me", created: new Date(), hasImage: false };
       this.chat_input = "";
       this.chats.push(message);
       this.talk(msg);
+      this.contentArea.scrollToBottom();
     }
   }
 
   talk(msg) {
     this.chatProvider.chat(this.context, msg)
       .then((result: any) => {
-        result.data.output.text.forEach((element,index,array) => {
+        result.data.output.text.forEach((element, index, array) => {
           var hasImage = false;
-          if (index === (array.length-1)){
+          if (index === (array.length - 1)) {
             var hasImage = true;
-            
+
           }
-          var message = { text: element, from: "Watson", created: new Date(),hasImage: hasImage };
+          var message = { text: element, from: "Watson", created: new Date(), hasImage: hasImage };
           console.log(message.hasImage);
           this.chats.push(message);
 
         });
         this.context = result.data.context;
-
       })
       .catch((error: any) => {
 
@@ -51,7 +52,5 @@ export class HomePage {
 
 
   }
-
-
 
 }

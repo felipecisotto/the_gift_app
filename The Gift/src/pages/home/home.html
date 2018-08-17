@@ -5,9 +5,9 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="contentArea">
   <ion-grid>
-    <ion-row *ngFor="let message of chats" [ngClass]="{'my_message_flex': message.from === nickname}">
+    <ion-row *ngFor="let message of chats" class="chatlist" [ngClass]="{'my_message_flex': message.from === nickname}">
       <ion-col col-1 > <ion-icon *ngIf="message.hasImage" class="fa-user lu"></ion-icon></ion-col>
       <div class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
         <span>{{ message.text }}</span>
@@ -23,7 +23,7 @@
         <ion-item no-lines>
           <ion-input type="text" placeholder="Enter Message" [(ngModel)]="chat_input" class="chat_input"> </ion-input>
         </ion-item>
-        <button ion-button clear color="primary" required (click)="send(chat_input)" class="chat_button">
+        <button ion-button clear color="primary" required (click)="send(chat_input)" (keyup.enter)="send(chat_input)" class="chat_button">
           <ion-icon class="fa-paper-plane button"></ion-icon>
         </button>
       </ion-col>
