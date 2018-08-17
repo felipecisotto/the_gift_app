@@ -1,17 +1,17 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title style="text-align:center">
-      Chat App
+  <ion-navbar style="height:10%;">
+    <ion-title style="padding: 0px; height:100%;">
+      <ion-icon class="fa-user user"></ion-icon>
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content>
   <ion-grid>
     <ion-row *ngFor="let message of chats" [ngClass]="{'my_message_flex': message.from === nickname}">
-      <span *ngIf="message.hasImage"> <ion-icon class="fa-paper-plane button"></ion-icon></span>
-      <ion-col col-9 class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+      <ion-col col-1 > <ion-icon *ngIf="message.hasImage" class="fa-user lu"></ion-icon></ion-col>
+      <div class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
         <span>{{ message.text }}</span>
-      </ion-col>
+      </div> 
       
     </ion-row>
   </ion-grid>

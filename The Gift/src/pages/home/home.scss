@@ -14,15 +14,16 @@ page-home {
         transition: all 250ms ease-in-out !important;
         border-radius: 10px !important;
         margin-bottom: 4px !important;
+        max-width: 91%;
     }
     .my_message {
-        background: #f00 !important;
-        color: #000 !important;
+        background: #8492A6 !important;
+        color: #fff !important;
         text-align: right;    
         float: right;
     }
     .other_message {
-        background: #dad5d5 !important;
+        background: #E5E9F2 !important;
         color: #000 !important;
         text-align: left;
     }
@@ -42,12 +43,12 @@ page-home {
         padding: 0px!important;
         min-height: 3.5em;
     }
-    .item-ios {
+    .item{
         padding-left: 9px;
     }
     .chat_input{
-        border-radius: 10px;
-        border: 1px solid #333;
+        border-radius: 30px;
+        border: 1px solid #ECEFF4;
         padding: 4px;
     }
     .chat_button{
@@ -57,5 +58,12 @@ page-home {
     }
     .text-input-ios{
         margin: 11px 8px 11px 11px;
+    }
+    .lu{
+        margin-top: 15px;
+    }
+    .user{
+        float: right;
+        padding: 28px;
     }
 }
