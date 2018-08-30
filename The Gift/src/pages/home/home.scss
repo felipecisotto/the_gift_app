@@ -62,8 +62,22 @@ page-home {
     .lu{
         margin-top: 15px;
     }
-    .user{
+    .user {
         float: right;
+        
+    }
+    .answers{
+        padding: 10px;
+    }
+}
+
+.ios {
+    .user{
         padding: 28px;
+    }
+}
+.md{
+    .user{
+        margin-right: 10px;
     }
 }

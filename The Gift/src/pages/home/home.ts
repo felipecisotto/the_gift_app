@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Content } from 'ionic-angular';
 import { ChatProvider } from './../../providers/chat/chat';
-
+import { BadgesProvider } from './../../providers/badges/badges';
 
 @Component({
   selector: 'page-home',
@@ -15,8 +15,9 @@ export class HomePage {
   private context = {};
   private chat_input;
   private mutationObserver: MutationObserver;
+  private tags = [];
 
-  constructor(public navCtrl: NavController, private chatProvider: ChatProvider) {
+  constructor(public navCtrl: NavController, private chatProvider: ChatProvider,private badgesProvider:BadgesProvider) {
     this.talk(null)
   }
 
@@ -25,8 +26,9 @@ export class HomePage {
       var message = { text: msg, from: "Me", created: new Date(), hasImage: false };
       this.chat_input = "";
       this.chats.push(message);
+      this.tags = [];
       this.talk(msg);
-      this.contentArea.scrollToBottom();
+      
     }
   }
 
@@ -40,16 +42,21 @@ export class HomePage {
 
           }
           var message = { text: element, from: "Watson", created: new Date(), hasImage: hasImage };
-          console.log(message.hasImage);
           this.chats.push(message);
-
+          
         });
+        this.tags = result.data.context.tags;
+        console.log(this.tags);
         this.context = result.data.context;
+        var badge  = result.data.products.length;
+        this.badgesProvider.setMyValue(badge);
+        console.log(badge);
+
       })
       .catch((error: any) => {
 
       });
-
+      
 
   }
 

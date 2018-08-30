@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar style="height:10%;">
+  <ion-navbar>
     <ion-title style="padding: 0px; height:100%;">
       <ion-icon class="fa-user user"></ion-icon>
     </ion-title>
@@ -8,11 +8,17 @@
 <ion-content class="contentArea">
   <ion-grid>
     <ion-row *ngFor="let message of chats" class="chatlist" [ngClass]="{'my_message_flex': message.from === nickname}">
-      <ion-col col-1 > <ion-icon *ngIf="message.hasImage" class="fa-user lu"></ion-icon></ion-col>
+      <ion-col col-1>
+        <ion-icon *ngIf="message.hasImage" class="fa-user lu"></ion-icon>
+      </ion-col>
       <div class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
         <span>{{ message.text }}</span>
-      </div> 
-      
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-col col-3 *ngFor="let tags of tags" class="answers">
+        <span (click)="send(tags)">{{tags}}</span>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
