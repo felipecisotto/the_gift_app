@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Content } from 'ionic-angular';
 import { ChatProvider } from './../../providers/chat/chat';
 import { BadgesProvider } from './../../providers/badges/badges';
+import { ProductProvider } from './../../providers/product/product';
 
 @Component({
   selector: 'page-home',
@@ -17,7 +18,7 @@ export class HomePage {
   private mutationObserver: MutationObserver;
   private tags = [];
 
-  constructor(public navCtrl: NavController, private chatProvider: ChatProvider,private badgesProvider:BadgesProvider) {
+  constructor(public navCtrl: NavController, private chatProvider: ChatProvider,private badgesProvider:BadgesProvider,private productProvider:ProductProvider) {
     this.talk(null)
   }
 
@@ -50,6 +51,7 @@ export class HomePage {
         this.context = result.data.context;
         var badge  = result.data.products.length;
         this.badgesProvider.setMyValue(badge);
+        this.productProvider.setProducts(result.data.products)
         console.log(badge);
 
       })
