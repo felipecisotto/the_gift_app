@@ -30,6 +30,7 @@
     "@ionic/pro": "2.0.3",
     "@ionic/storage": "2.1.3",
     "cordova-android": "7.0.0",
+    "cordova-plugin-badge": "git+https://github.com/katzer/cordova-plugin-badge.git",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-ionic-webview": "^2.0.2",
@@ -37,6 +38,7 @@
     "cordova-plugin-whitelist": "^1.3.3",
     "font-awesome": "^4.7.0",
     "ionic-angular": "3.9.2",
+    "ionic2-super-tabs": "^4.3.0",
     "ionicons": "3.0.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
@@ -53,7 +55,8 @@
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-badge": {}
     },
     "platforms": [
       "android"
