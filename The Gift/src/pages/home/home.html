@@ -17,7 +17,8 @@
     </ion-row>
     <ion-row>
       <ion-col col-3 *ngFor="let tags of tags" class="answers">
-        <span (click)="send(tags)">{{tags}}</span>
+          <button ion-button round col-12 class="botao_tags" (click)="send(tags)">{{tags}}</button>
+       <!-- <span (click)="send(tags)">{{tags}}</span> -->
       </ion-col>
     </ion-row>
   </ion-grid>
