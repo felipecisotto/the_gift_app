@@ -1,0 +1,36 @@
+// Hacks for font awesome icons in tabbar
+// see https://forum.ionicframework.com/t/anyway-to-custom-the-tabbars-icon-with-my-own-svg-file/46131/2
+// the content code of each fa-icon can be found here: 'node_modules/font-awesome/css/font-awesome.css'
+page-tabs{
+.fa-icons-general {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.ion-ios-fa-user::before,
+.ion-ios-fa-user-outline::before,
+.ion-md-fa-user::before {
+    @extend .fa-icons-general;
+    content: "\f007";
+}
+
+.ion-ios-fa-gift::before,
+.ion-ios-fa-gift-outline::before,
+.ion-md-fa-gift::before {
+    @extend .fa-icons-general;
+    content: "\f06b";
+}
+
+.ion-ios-fa-heart::before,
+.ion-ios-fa-heart-outline::before,
+.ion-md-fa-heart::before {
+    @extend .fa-icons-general;
+    content: "\f004";
+}
+
+}

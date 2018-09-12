@@ -3,4 +3,18 @@ page-product {
         display: flex;
         justify-content: space-between;
     }
+    .ios {
+        .user{
+            padding: 28px;
+        }
+    }
+    .md{
+        .user{
+            margin-right: 10px;
+        }
+    }
+    .user {
+        float: right;
+        
+    }
 }

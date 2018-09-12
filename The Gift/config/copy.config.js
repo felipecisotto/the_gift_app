@@ -21,5 +21,9 @@ module.exports = {
     copySwToolbox: {
       src: ['{{ROOT}}/node_modules/sw-toolbox/sw-toolbox.js'],
       dest: '{{BUILD}}'
+    },
+    copyFontAwesome: {
+      src: ['{{ROOT}}/node_modules/font-awesome/fonts/**/*'],
+      dest: '{{WWW}}/assets/fonts'
     }
   }

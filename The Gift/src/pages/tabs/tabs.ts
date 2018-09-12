@@ -9,6 +9,7 @@ import { BadgesProvider } from './../../providers/badges/badges';
 import { ProductsPage } from '../products/products';
 
 @Component({
+  selector: 'page-tabs',
   templateUrl: 'tabs.html'
 })
 export class TabsPage {

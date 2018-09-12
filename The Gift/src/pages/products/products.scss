@@ -1,3 +1,16 @@
 page-products {
-
+    .ios {
+        .user{
+            padding: 28px;
+        }
+    }
+    .md{
+        .user{
+            margin-right: 10px;
+        }
+    }
+    .user {
+        float: right;
+        
+    }
 }
