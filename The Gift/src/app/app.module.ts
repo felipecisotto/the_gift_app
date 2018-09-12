@@ -15,7 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChatProvider } from '../providers/chat/chat';
 import { HttpModule } from '@angular/http';
 import { BadgesProvider } from '../providers/badges/badges';
-import { ProductProvider } from '../providers/product/product';
+import { ProductsProvider } from '../providers/products/products';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import { ProductProvider } from '../providers/product/product';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ChatProvider,
     BadgesProvider,
-    ProductProvider
+    ProductsProvider
   ]
 })
 export class AppModule {}

@@ -25,7 +25,7 @@ export class ProductPage {
     private productsService: ProductsProvider
   ) {
     this.product = this.navParams.get('product');
-    this.favoriteProducts = this.productsService.getFavoriteProducts();
+    //this.favoriteProducts = this.productsService.getFavoriteProducts();
   }
 
   ionViewDidLoad() {
@@ -37,12 +37,12 @@ export class ProductPage {
 
   favorite() {
     this.favoriteProducts.push(this.product);
-    this.productsService.updateFavoriteProducts(this.favoriteProducts);
+    //this.productsService.updateFavoriteProducts(this.favoriteProducts);
     this.goBack();
   }
 
   likeDisabled() {
-    return this.favoriteProducts.filter(product => product.nome === this.product.nome).length;
+    //return this.favoriteProducts.filter(product => product.nome === this.product.nome).length;
   }
 
 }

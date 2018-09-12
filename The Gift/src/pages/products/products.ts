@@ -22,8 +22,10 @@ export class ProductsPage {
 
   products
 
-  ionViewDidLoad() {
-    this.productsService.getProducts().subscribe(products => this.products = products)
+  ionViewDidEnter() {
+    //this.productsService.getProducts().subscribe(products => this.products = products)
+    this.products = this.productsService.getProducts()
+    console.log(this.products)
   }
 
   onTap(event, product) {

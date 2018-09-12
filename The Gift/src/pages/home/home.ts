@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Content } from 'ionic-angular';
 import { ChatProvider } from './../../providers/chat/chat';
 import { BadgesProvider } from './../../providers/badges/badges';
-import { ProductProvider } from './../../providers/product/product';
+import { ProductsProvider } from './../../providers/products/products';
 
 @Component({
   selector: 'page-home',
@@ -10,15 +10,13 @@ import { ProductProvider } from './../../providers/product/product';
 })
 export class HomePage {
   @ViewChild(Content) contentArea: Content;
-  private messages = [];
   private nickname = "Me";
   private chats = [];
   private context = {};
   private chat_input;
-  private mutationObserver: MutationObserver;
   private tags = [];
 
-  constructor(public navCtrl: NavController, private chatProvider: ChatProvider,private badgesProvider:BadgesProvider,private productProvider:ProductProvider) {
+  constructor(public navCtrl: NavController, private chatProvider: ChatProvider,private badgesProvider:BadgesProvider,private productsProvider:ProductsProvider) {
     this.talk(null)
   }
 
@@ -39,7 +37,7 @@ export class HomePage {
         result.data.output.text.forEach((element, index, array) => {
           var hasImage = false;
           if (index === (array.length - 1)) {
-            var hasImage = true;
+             hasImage = true;
 
           }
           var message = { text: element, from: "Watson", created: new Date(), hasImage: hasImage };
@@ -51,7 +49,7 @@ export class HomePage {
         this.context = result.data.context;
         var badge  = result.data.products.length;
         this.badgesProvider.setMyValue(badge);
-        this.productProvider.setProducts(result.data.products)
+        this.productsProvider.setProducts(result.data.products)
         console.log(badge);
 
       })
@@ -59,7 +57,7 @@ export class HomePage {
 
       });
       
-
   }
+
 
 }

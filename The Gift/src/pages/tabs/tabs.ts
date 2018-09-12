@@ -6,6 +6,7 @@ import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { Events } from 'ionic-angular';
 import { BadgesProvider } from './../../providers/badges/badges';
+import { ProductsPage } from '../products/products';
 
 @Component({
   templateUrl: 'tabs.html'
