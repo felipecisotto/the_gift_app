@@ -5,7 +5,7 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content class="contentArea">
+<ion-content class="contentArea" scrollDownOnLoad="true">
   <ion-grid>
     <ion-row *ngFor="let message of chats" class="chatlist" [ngClass]="{'my_message_flex': message.from === nickname}">
       <ion-col col-1>
@@ -23,6 +23,7 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+{{ scrollToBottom() }}
 <ion-footer>
   <ion-toolbar class="ion-rodape">
     <ion-row class="message_row">

@@ -3,20 +3,27 @@ import { NavController, Content } from 'ionic-angular';
 import { ChatProvider } from './../../providers/chat/chat';
 import { BadgesProvider } from './../../providers/badges/badges';
 import { ProductsProvider } from './../../providers/products/products';
+import { GivenPersonProvider } from './../../providers/given-person/given-person';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  private chats = [];
   @ViewChild(Content) contentArea: Content;
   private nickname = "Me";
-  private chats = [];
   private context = {};
   private chat_input;
   private tags = [];
+  @ViewChild(Content) content: Content;
 
-  constructor(public navCtrl: NavController, private chatProvider: ChatProvider,private badgesProvider:BadgesProvider,private productsProvider:ProductsProvider) {
+  constructor(public navCtrl: NavController
+             ,private chatProvider: ChatProvider
+             ,private badgesProvider:BadgesProvider
+             ,private productsProvider:ProductsProvider
+             ,private givenPerson:GivenPersonProvider) {
     this.talk(null)
   }
 
@@ -45,12 +52,11 @@ export class HomePage {
           
         });
         this.tags = result.data.context.tags;
-        console.log(this.tags);
         this.context = result.data.context;
         var badge  = result.data.products.length;
         this.badgesProvider.setMyValue(badge);
         this.productsProvider.setProducts(result.data.products)
-        console.log(badge);
+        this.givenPerson.setid(result.data.context.givenPersonId)
 
       })
       .catch((error: any) => {
@@ -58,6 +64,11 @@ export class HomePage {
       });
       
   }
+  scrollToBottom() {
+    if (this.content.scrollToBottom) {
+       this.content.scrollToBottom();
+    }
+  } 
 
 
 }

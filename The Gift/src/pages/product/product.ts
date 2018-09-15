@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ProductsProvider } from '../../providers/products/products';
+import { GivenPersonProvider } from '../../providers/given-person/given-person';
 
 /**
  * Generated class for the ProductPage page.
@@ -22,7 +23,8 @@ export class ProductPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private productsService: ProductsProvider
+    private productsService: ProductsProvider,
+    private givenPerson:GivenPersonProvider
   ) {
     this.product = this.navParams.get('product');
     //this.favoriteProducts = this.productsService.getFavoriteProducts();
@@ -36,8 +38,9 @@ export class ProductPage {
   }
 
   favorite() {
-    this.favoriteProducts.push(this.product);
-    //this.productsService.updateFavoriteProducts(this.favoriteProducts);
+    console.log(this.product._id)
+
+    this.givenPerson.addlike(this.product._id)
     this.goBack();
   }
 
