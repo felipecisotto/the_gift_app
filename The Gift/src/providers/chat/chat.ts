@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class ChatProvider {
-  private API_URL = 'http://localhost:6001'
+  private API_URL = 'https://thegift-api.mybluemix.net'
   constructor(public http: Http) {}
 
   chat(context: {},text: string){
