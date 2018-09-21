@@ -6,11 +6,11 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title style="padding: 0px; height:100%;">
-      <ion-icon class="fa-user user"></ion-icon>
-    </ion-title>
+      <ion-title style="padding: 0px; height:100%;">
+          The Gift
+          <ion-icon class="fa-ellipsis-v user"></ion-icon>
+      </ion-title>
   </ion-navbar>
-
 </ion-header>
 <ion-content class="card-background-page">
   <ion-grid>
@@ -18,7 +18,7 @@
       <ion-col col-6  *ngFor="let product of products">
         <ion-card (click)="onTap($event, product)">
           <img [src]="product.imagens[0]"/>
-          <div class="card-title">{{product.nome}}</div>
+          <div class="card-title">{{substr(71,product.nome)}}</div>
           <div class="card-subtitle">{{product.valor | currency:'BRL'}}</div>
         </ion-card>
       </ion-col>
