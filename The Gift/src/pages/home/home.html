@@ -1,41 +1,42 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title style="padding: 0px; height:100%;">
-      The Gift
-      <ion-icon class="fa-ellipsis-v user"></ion-icon>
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title style="padding: 0px; height:100%;">
+            The Gift
+            <ion-icon class="fa-ellipsis-v user"></ion-icon>
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 <ion-content class="contentArea" scrollDownOnLoad="true">
-  <ion-grid>
-    <ion-row *ngFor="let message of chats" class="chatlist" [ngClass]="{'my_message_flex': message.from === nickname}">
-      <ion-col col-1>
-        <ion-img *ngIf="message.hasImage" class="lu" src="../../assets/imgs/avatar.png" width="23px" height="23px"></ion-img>
-      </ion-col>
-      <div class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
-        <span>{{ message.text }}</span>
-      </div>
-    </ion-row>
-    <ion-row style="margin:0 auto;">
-      <div *ngFor="let tags of tags" class="answers">
-          <button ion-button round outline class="botao_tags" (click)="send(tags)">{{tags}}</button>
-       <!-- <span (click)="send(tags)">{{tags}}</span> -->
-      </div>
-    </ion-row>
-  </ion-grid>
-  {{ scrollToBottom() }}
-  <ion-footer>
     <ion-grid>
-      <ion-row>
-        <ion-col col-10>
-          <ion-input type="text" placeholder="Digite Aqui..." [(ngModel)]="chat_input" class="chat_input"> </ion-input>
-        </ion-col>
-        <ion-col col-2 (click)="send(chat_input)">
-          <div class="circle"><ion-icon class="fa-paper-plane"></ion-icon></div>
-          
-        </ion-col>
-      </ion-row>
+        <ion-row *ngFor="let message of chats" class="chatlist" [ngClass]="{'my_message_flex': message.from === nickname}">
+            <ion-col col-1>
+                <ion-img *ngIf="message.hasImage" class="lu" src="../../assets/imgs/avatar.png" width="23px" height="23px"></ion-img>
+            </ion-col>
+            <div class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+                <span>{{ message.text }}</span>
+            </div>
+        </ion-row>
+        <ion-row style="margin:0 auto;">
+            <div *ngFor="let tags of tags" class="answers">
+                <button ion-button round outline class="botao_tags" (click)="send(tags)">{{tags}}</button>
+                <!-- <span (click)="send(tags)">{{tags}}</span> -->
+            </div>
+        </ion-row>
     </ion-grid>
-  </ion-footer>
+    {{ scrollToBottom() }}
 </ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-10>
+                <ion-input type="text" placeholder="Digite Aqui..." [(ngModel)]="chat_input" class="chat_input"> </ion-input>
+            </ion-col>
+            <ion-col col-2 (click)="send(chat_input)">
+                <div class="circle">
+                    <ion-icon class="fa-paper-plane"></ion-icon>
+                </div>
 
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

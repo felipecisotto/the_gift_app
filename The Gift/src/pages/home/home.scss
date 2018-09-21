@@ -17,8 +17,9 @@ page-home {
         max-width: 91%;
     }
     .my_message {
-        background: #6441a5 !important;
+        //background: #6441a5 !important;
         color: #fff !important;
+        background-image: linear-gradient(to bottom right, #6441a5, #4A00E0) !important;
         text-align: right;    
         float: right;
     }
@@ -58,20 +59,18 @@ page-home {
     }
     .answers{
         padding: 0.25em;
-        
     }
+    
     .botao_tags{
         font-size: 12px;
-        //background-image: linear-gradient(to bottom right, #8E2DE2, #4A00E0);
         color: #6441a5;
         border: #6441a5 1px solid;
     }
     .botao_tags:hover{
         font-size: 12px;
-        background-image: linear-gradient(to bottom right, #8E2DE2, #4A00E0);
+        //background-image: linear-gradient(to bottom right, #8E2DE2, #4A00E0);
+        background-image: linear-gradient(to bottom right, #6441a5, #4A00E0);
         color: #FFF;
-        //border: #6441a5 1px solid;
-
     }
     .toolbar-background{
         background: #4d156e;
