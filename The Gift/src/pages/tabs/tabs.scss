@@ -16,7 +16,7 @@ page-tabs{
 .ion-ios-fa-user-outline::before,
 .ion-md-fa-user::before {
     @extend .fa-icons-general;
-    content: "\f007";
+    content: "\f086";
 }
 
 .ion-ios-fa-gift::before,
@@ -32,5 +32,10 @@ page-tabs{
     @extend .fa-icons-general;
     content: "\f004";
 }
-
+.tab-button[aria-selected=true] {
+    color: #4d156e!important;
+}
+.tab-button-icon[ng-reflect-is-active=true] {
+    color: #4d156e!important;
+}
 }

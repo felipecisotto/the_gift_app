@@ -17,7 +17,7 @@ page-home {
         max-width: 91%;
     }
     .my_message {
-        background: #8492A6 !important;
+        background: #6441a5 !important;
         color: #fff !important;
         text-align: right;    
         float: right;
@@ -35,17 +35,7 @@ page-home {
     .my_message_flex{
         justify-content: flex-end;
     }
-    .footer{
-        height: 3.5em;
-        bottom:60px!important;
-    }
-    .ion-rodape{
-        padding: 0px!important;
-        min-height: 3.5em;
-    }
-    .item{
-        padding-left: 9px;
-    }
+    
     .chat_input{
         border-radius: 30px;
         border: 1px solid #ECEFF4;
@@ -60,18 +50,65 @@ page-home {
         margin: 11px 8px 11px 11px;
     }
     .lu{
-        margin-top: 15px;
+        vertical-align: sub;
     }
     .user {
         float: right;
         
     }
     .answers{
-        padding: 10px;
+        padding: 0.25em;
+        
     }
     .botao_tags{
-        font-size: 12px
+        font-size: 12px;
+        //background-image: linear-gradient(to bottom right, #8E2DE2, #4A00E0);
+        color: #6441a5;
+        border: #6441a5 1px solid;
     }
+    .botao_tags:hover{
+        font-size: 12px;
+        background-image: linear-gradient(to bottom right, #8E2DE2, #4A00E0);
+        color: #FFF;
+        //border: #6441a5 1px solid;
+
+    }
+    .toolbar-background{
+        background: #4d156e;
+    }
+    .toolbar-title{
+        text-align: center;
+        color: #fff;
+    }
+    .button-round{
+        padding: 0 1em;
+    }
+    ion-footer {
+        background: white;
+        ion-icon {
+          padding: 13px 10px 10px 10px;
+          font-size: 25px;
+          color: white;
+        }
+      }
+      ion-content {
+     
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+        .item-md, .item-ios {
+          background: none;
+        }
+      }
+      .circle {
+        background-color: #00e676;
+        height: 50px;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        width: 50px;
+    }
+    
 }
 
 .ios {
