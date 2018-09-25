@@ -32,5 +32,11 @@ export class ProductsPage {
       product
     });
   }
+  substr = function (size, value) {
+    if (value && value.length > size) {
+        return value.substr(0, size) + "...";
+    }
+    return value;
+};
 
 }

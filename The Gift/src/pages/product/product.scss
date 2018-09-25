@@ -17,4 +17,27 @@ page-product {
         float: right;
         
     }
+    ion-slides {
+        height: 45%;
+    }
+    .slide-zoom {
+        width: 50%;
+    }
+    .button-clear{
+        color: #4e296e;
+    }
+    .ion-icon, .btn-default, .swiper-pagination-bullet-active{
+        background-color: #4e296e;
+    }
+    h5{
+        font-size: 3rem;
+        color: #4e296e;
+    }
+    .toolbar-background{
+        background: #4d156e;
+    }
+    .toolbar-title{
+        text-align: center;
+        color: #fff;
+    }
 }
