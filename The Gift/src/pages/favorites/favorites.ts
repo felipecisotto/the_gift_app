@@ -31,13 +31,15 @@ export class FavoritesPage {
     
   }
   goBack() {
-    this.viewCtrl.dismiss();
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
   deleteFavorite(id){
     console.log("id", id)
     console.log("given gambeta id",this.givenPersonProvider.givenPersonId)
      this.givenPersonProvider.removeLike(id)
-     this.goBack()
+     this.goBack(
+
+     )
   }
     
   
