@@ -1,4 +1,25 @@
 page-favorites {
+    .ios {
+        .user{
+            padding: 28px;
+        }
+    }
+    .md{
+        .user{
+            margin-right: 10px;
+        }
+    }
+    .user {
+        float: right;
+        
+    }
+    .toolbar-background{
+        background: #4d156e;
+    }
+    .toolbar-title{
+        text-align: center;
+        color: #fff;
+    }
     .product-card {
         position: relative;
 

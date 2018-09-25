@@ -89,6 +89,7 @@ export class GivenPersonProvider {
     });
   }
   removeLike(prodid){
+    console.log("iaiiii")
     return new Promise((resolve, reject) => {
       var data = {
         givenPersonId:this.givenPersonId,

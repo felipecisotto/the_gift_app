@@ -22,11 +22,11 @@
   <h1 ion-text>{{product.nome}}</h1>
   <h5 ion-text>{{product.valor | currency:"BRL"}}</h5>
   <ion-buttons class="buttons-justified">
-    <button ion-button icon-only clear (click)="goBack()">
+    <button ion-button icon-only clear (click)="likeDisabled()">
       <ion-icon name="close"></ion-icon>
     </button>
     <button ion-button class="btn-default">Comprar</button>
-    <button ion-button icon-only clear (click)="favorite()" [disabled]="likeDisabled()">
+    <button ion-button icon-only clear (click)="favorite()">
       <ion-icon name="heart"></ion-icon>
     </button>
   </ion-buttons>

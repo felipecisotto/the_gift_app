@@ -39,13 +39,14 @@ export class ProductPage {
 
   favorite() {
     console.log(this.product._id)
-
     this.givenPerson.addlike(this.product._id)
     this.goBack();
   }
 
   likeDisabled() {
     //return this.favoriteProducts.filter(product => product.nome === this.product.nome).length;
+    this.givenPerson.removeDeslike(this.product._id)
+    this.goBack();
   }
 
 }
