@@ -29,6 +29,7 @@ page-favorites {
             img {
                 border: 1px solid #dedede;
                 margin-bottom: 10px;
+                height: 129px;
             }
         }
 
@@ -60,14 +61,18 @@ page-favorites {
             overflow: hidden; 
             text-overflow: ellipsis;
             font-weight: 400;
+            height: 16px;
         }
 
-        .card-money {
+        .card-currency {
             font-size: 18px;
+            margin-top: 20px;
+            color: #4d156e;
         }
 
         .card-title {
             font-weight: 500;
+            height: 32px;
         }
     }
 }

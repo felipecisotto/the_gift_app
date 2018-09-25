@@ -15,11 +15,13 @@
 <ion-content class="card-background-page">
   <ion-grid>
     <ion-row>
-      <ion-col col-6  *ngFor="let product of products">
-        <ion-card (click)="onTap($event, product)">
+      <ion-col class="product-card" col-6  *ngFor="let product of products">
+        <ion-card class="card-info-wrapper" (click)="onTap($event, product)">
           <img [src]="product.imagens[0]"/>
-          <div class="card-title">{{substr(71,product.nome)}}</div>
-          <div class="card-subtitle">{{product.valor | currency:'BRL'}}</div>
+
+          <div class="card-title">{{ substr(24, product.nome )}}</div>
+          <div class="card-description">{{ substr(71, product.descricao )}}</div>
+          <div class="card-currency">{{product.valor | currency:'BRL'}}</div>
         </ion-card>
       </ion-col>
     </ion-row>

@@ -21,9 +21,9 @@
         <ion-card class="card-info-wrapper">
             <!-- (click)="onTap($event, product)" -->
           <img [src]="favorite.imagens[0]"/>
-          <div class="card-title">{{favorite.nome}}</div>
-          <div class="card-description ">{{favorite.descricao}}</div>
-          <div class="card-money">{{favorite.valor | currency:'BRL'}}</div>
+          <div class="card-title">{{substr(28, favorite.nome)}}</div>
+          <div class="card-description">{{favorite.descricao}}</div>
+          <div class="card-currency">{{favorite.valor | currency:'BRL'}}</div>
         </ion-card>
       </ion-col>
     </ion-row>

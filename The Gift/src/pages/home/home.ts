@@ -4,6 +4,7 @@ import { ChatProvider } from './../../providers/chat/chat';
 import { BadgesProvider } from './../../providers/badges/badges';
 import { ProductsProvider } from './../../providers/products/products';
 import { GivenPersonProvider } from './../../providers/given-person/given-person';
+import { ProductsPage } from './../products/products'
 
 
 @Component({
@@ -58,6 +59,9 @@ export class HomePage {
         this.productsProvider.setProducts(result.data.products)
         this.givenPerson.setid(result.data.context.givenPersonId)
 
+        if(this.tags.length == 0){
+          this.navCtrl.push(ProductsPage)
+          } 
       })
       .catch((error: any) => {
 

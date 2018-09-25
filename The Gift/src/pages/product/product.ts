@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ProductsProvider } from '../../providers/products/products';
 import { GivenPersonProvider } from '../../providers/given-person/given-person';
 
@@ -24,7 +24,8 @@ export class ProductPage {
     public navParams: NavParams,
     public viewCtrl: ViewController,
     private productsService: ProductsProvider,
-    private givenPerson:GivenPersonProvider
+    private givenPerson:GivenPersonProvider,
+    public modalCtrl: ModalController
   ) {
     this.product = this.navParams.get('product');
     //this.favoriteProducts = this.productsService.getFavoriteProducts();
@@ -48,5 +49,14 @@ export class ProductPage {
     this.givenPerson.removeDeslike(this.product._id)
     this.goBack();
   }
+
+openModal(){
+
+}
+
+// presentProfileModal() {
+//   let profileModal = this.modalCtrl.create(Profile, { userId: 8675309 });
+//   profileModal.present();
+// }
 
 }
