@@ -11,19 +11,37 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class GivenPersonProvider {
   private API_URL = 'https://thegift-api.mybluemix.net';
-  private givenPersonId;
+   givenPersonId;
   
   constructor(public http: Http) {
     
   }
+
+  getFavorites(){
+    return new Promise((resolve, reject) =>{
+      var favorites = {
+        givenPersonId:this.givenPersonId
+      };
+      
+      this.http.post(this.API_URL + '/givenperson/getgivenpersonbyid', favorites)
+          .subscribe((result: any) => {
+            console.log("melivitao",result.json());
+            resolve(result.json());
+          },
+          (error) => {
+            reject(error.json());
+          });
+    });
+  }
+
   addDislike(prodid){
     return new Promise((resolve, reject) => {
       var data = {
-        _id:this.givenPersonId,
+        givenPersonId:this.givenPersonId,
         prodid: prodid
       };
  
-      this.http.post(this.API_URL + '/givenperson/adddeslike', data)
+      this.http.post(this.API_URL + '/givenperson/addDislike', data)
         .subscribe((result: any) => {
           console.log(result.json());
           resolve(result.json());
@@ -36,16 +54,17 @@ export class GivenPersonProvider {
   removeDeslike(prodid){
     return new Promise((resolve, reject) => {
       var data = {
-        _id:this.givenPersonId,
+        givenPersonId:this.givenPersonId,
         prodid: prodid
       };
- 
-      this.http.post(this.API_URL + '/givenperson/removedeslike', data)
+      console.log("datadata",data)
+      this.http.post(this.API_URL + '/givenperson/removeDislike', data)
         .subscribe((result: any) => {
           console.log(result.json());
           resolve(result.json());
         },
         (error) => {
+          console.log("rotaaa", error)
           reject(error.json());
         });
     });
@@ -72,13 +91,13 @@ export class GivenPersonProvider {
   removeLike(prodid){
     return new Promise((resolve, reject) => {
       var data = {
-        _id:this.givenPersonId,
+        givenPersonId:this.givenPersonId,
         prodid: prodid
       };
- 
+      console.log("data lock", data)
       this.http.post(this.API_URL + '/givenperson/removelike', data)
         .subscribe((result: any) => {
-          console.log(result.json());
+          console.log("result.json()",result.json());
           resolve(result.json());
         },
         (error) => {

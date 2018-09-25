@@ -1,8 +1,6 @@
+import { FavoritesPage } from './../favorites/favorites';
 
 import { Component } from '@angular/core';
-
-
-import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { Events } from 'ionic-angular';
 import { BadgesProvider } from './../../providers/badges/badges';
@@ -16,7 +14,7 @@ export class TabsPage {
 
   tab1Root = HomePage;
   tab2Root = ProductsPage;
-  tab3Root = ContactPage;
+  tab3Root = FavoritesPage;
   tab1BadgeCount;
 
   constructor(public events: Events,private badgesProvider: BadgesProvider) {

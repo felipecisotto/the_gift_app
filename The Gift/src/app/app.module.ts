@@ -1,10 +1,10 @@
+import { FavoritesPage } from './../pages/favorites/favorites';
 import { ProductPage } from './../pages/product/product';
 import { ProductsPage } from './../pages/products/products';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -19,10 +19,10 @@ import { GivenPersonProvider } from '../providers/given-person/given-person';
   declarations: [
     MyApp,
     ProductsPage,
-    ContactPage,
     HomePage,
     TabsPage,
-    ProductPage
+    ProductPage,
+    FavoritesPage
   ],
   imports: [
     BrowserModule,
@@ -33,10 +33,10 @@ import { GivenPersonProvider } from '../providers/given-person/given-person';
   entryComponents: [
     MyApp,
     ProductsPage,
-    ContactPage,
     HomePage,
     TabsPage,
-    ProductPage
+    ProductPage,
+    FavoritesPage
   ],
   providers: [
     StatusBar,

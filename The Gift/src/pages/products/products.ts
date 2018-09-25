@@ -23,7 +23,6 @@ export class ProductsPage {
   products
 
   ionViewDidEnter() {
-    //this.productsService.getProducts().subscribe(products => this.products = products)
     this.products = this.productsService.getProducts()
     console.log(this.products)
   }
