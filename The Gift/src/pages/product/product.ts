@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ProductsProvider } from '../../providers/products/products';
 import { GivenPersonProvider } from '../../providers/given-person/given-person';
+import { BuyModalPage } from '../buy-modal/buy-modal'
 
 /**
  * Generated class for the ProductPage page.
@@ -46,17 +47,19 @@ export class ProductPage {
 
   likeDisabled() {
     //return this.favoriteProducts.filter(product => product.nome === this.product.nome).length;
-    this.givenPerson.removeDeslike(this.product._id)
+    this.givenPerson.addDislike(this.product._id)
     this.goBack();
   }
 
 openModal(){
-
+  this.navCtrl.push(BuyModalPage);
 }
-
-// presentProfileModal() {
-//   let profileModal = this.modalCtrl.create(Profile, { userId: 8675309 });
+// openModal(){
+//   let profileModal = this.modalCtrl.create(BuyModalPage);
 //   profileModal.present();
 // }
+reload(){
+  window.location.reload();
+}
 
 }

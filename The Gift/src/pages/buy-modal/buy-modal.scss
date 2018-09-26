@@ -1,0 +1,29 @@
+page-buy-modal {
+    .ios {
+        .user{
+            padding: 28px;
+        }
+    }
+    .md{
+        .user{
+            margin-right: 10px;
+        }
+    }
+    .user {
+        float: right;
+        
+    }
+    .toolbar-background{
+        background: #4d156e;
+    }
+    .toolbar-title{
+        text-align: center;
+        color: #fff;
+    }
+    .back-button{
+        color: #fff;
+    }
+    h5{
+        margin: 0 auto;
+    }
+}

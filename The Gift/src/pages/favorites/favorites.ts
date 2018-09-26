@@ -1,6 +1,7 @@
 import { GivenPersonProvider } from './../../providers/given-person/given-person';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { ProductPage } from '../product/product';
 
 /**
  * Generated class for the FavoritesPage page.
@@ -33,13 +34,11 @@ export class FavoritesPage {
   goBack() {
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
-  deleteFavorite(id){
+  async deleteFavorite(id){
     console.log("id", id)
     console.log("given gambeta id",this.givenPersonProvider.givenPersonId)
-     this.givenPersonProvider.removeLike(id)
-     this.goBack(
-
-     )
+     await this.givenPersonProvider.removeLike(id)
+     this.goBack()
   }
 
   substr = (size, value) => {
@@ -48,4 +47,13 @@ export class FavoritesPage {
     }
     return value;
   }
+  onTap(event, product) {
+    this.navCtrl.push(ProductPage, {
+      product
+    });
+  }
+  reload(){
+    window.location.reload();
+  }
 }
+

@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http';
 import { BadgesProvider } from '../providers/badges/badges';
 import { ProductsProvider } from '../providers/products/products';
 import { GivenPersonProvider } from '../providers/given-person/given-person';
+import { BuyModalPage } from '../pages/buy-modal/buy-modal';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GivenPersonProvider } from '../providers/given-person/given-person';
     HomePage,
     TabsPage,
     ProductPage,
-    FavoritesPage
+    FavoritesPage,
+    BuyModalPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { GivenPersonProvider } from '../providers/given-person/given-person';
     HomePage,
     TabsPage,
     ProductPage,
-    FavoritesPage
+    FavoritesPage,
+    BuyModalPage
   ],
   providers: [
     StatusBar,

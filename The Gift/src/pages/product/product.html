@@ -8,7 +8,7 @@
   <ion-navbar>
       <ion-title style="padding: 0px; height:100%;">
           The Gift
-          <ion-icon class="fa-ellipsis-v user"></ion-icon>
+          <ion-icon (click)="reload()" class="user" name="refresh"></ion-icon>
       </ion-title>
   </ion-navbar>
 </ion-header>
@@ -20,12 +20,13 @@
     </ion-slide>
   </ion-slides>
   <h1 ion-text>{{product.nome}}</h1>
+  <h6 ion-text>{{product.descricao}}</h6>
   <h5 ion-text>{{product.valor | currency:"BRL"}}</h5>
   <ion-buttons class="buttons-justified">
     <button ion-button icon-only clear (click)="likeDisabled()">
       <ion-icon name="close"></ion-icon>
     </button>
-    <button ion-button class="btn-default" >Comprar</button>
+    <button ion-button class="btn-default" (click)="openModal()" >Comprar</button>
     <button ion-button icon-only clear (click)="favorite()">
       <ion-icon name="heart"></ion-icon>
     </button>

@@ -38,5 +38,8 @@ export class ProductsPage {
     }
     return value;
 };
+reload(){
+  window.location.reload();
+}
 
 }

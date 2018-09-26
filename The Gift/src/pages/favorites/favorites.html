@@ -8,7 +8,7 @@
   <ion-navbar>
       <ion-title style="padding: 0px; height:100%;">
           The Gift
-          <ion-icon class="fa-ellipsis-v user"></ion-icon>
+          <ion-icon (click)="reload()" class="user" name="refresh"></ion-icon>
       </ion-title>
   </ion-navbar>
 </ion-header>
@@ -18,7 +18,7 @@
       <ion-col class="product-card" col-6  *ngFor="let favorite of favorites">
         <ion-icon class="close-btn" name="close" (click)="deleteFavorite(favorite._id)"></ion-icon>
 
-        <ion-card class="card-info-wrapper">
+        <ion-card class="card-info-wrapper" (click)="onTap($event, favorite)">
             <!-- (click)="onTap($event, product)" -->
           <img [src]="favorite.imagens[0]"/>
           <div class="card-title">{{substr(28, favorite.nome)}}</div>
